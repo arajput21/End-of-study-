@@ -20,7 +20,7 @@ data = {
 }
 r = requests.post('https://edc.aceso-sepsis.org/api/', data=data)
 dat1 = r.json()
-df = pd.DataFrame(dat1)
+df = pd.DataFrame(dat1) #new DataFrame
 
 # Rename columns starting with 'end' to start with 's_eos' instead
 new_columns = {col: col.replace('end', 's_eos', 1) if col.startswith('end') else col for col in df.columns}
